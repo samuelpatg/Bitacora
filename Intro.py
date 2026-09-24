@@ -71,8 +71,8 @@ with col3:
  st.subheader("Análisis de Imagen")
  image = Image.open('OIG4.jpg')
  st.image(image, width=200)
- st.write("En la siguiente enlace veremos la capacidad de análisis en Imágenes.") 
- url = "https://vision2-gpt4o.streamlit.app/"
+ st.write("En la siguiente enlace veremos una aplicación que reconoce  el texto en imagenes y convertir ese texto en codigo morse.") 
+ url = "https://ocr-audio-fw4c98qxulwsqkkzzdsnau.streamlit.app/"
  st.write(f"Vision: [Enlace]({url})")
  
  st.subheader("Sistema Ciberfísico")
