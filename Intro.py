@@ -5,9 +5,7 @@ st.title("Bitacora de las actividades en clase.")
 with st.sidebar:
   st.subheader("Actividades elaboradas a lo largo del curso")
   parrafo = (
-    "La inteligencia artificial permite mejorar la toma de decisiones con el uso de datos, "
-    "automatizar tareas rutinarias y proporcionar análisis avanzados en tiempo real, lo que "
-    "resulta en una mayor eficiencia y precisión en diversos campos."
+    "Diferentes actividades realizadas en clase"
   )
   st.write(parrafo)
 
