@@ -26,8 +26,8 @@ with col1:
  st.subheader("Reconocimiento de Objetos")
  image = Image.open('txt_to_audio.png')
  st.image(image, width=200)
- st.write("En la siguiente enlace veremos como se detectan objetos en Imágenes.") 
- url = "https://yolov5cmc.streamlit.app/"
+ st.write("En el siguiente enlace veremos una app que nos permite detectar objetos en Imágenes.") 
+ url = "https://l37bxo8txruhjusy2ug4sz.streamlit.app/"
  st.write(f"YOLO: [Enlace]({url})")
 
  st.subheader("Entrenando Modelos")
