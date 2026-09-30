@@ -45,11 +45,11 @@ with col2:
  url = "https://textoaaudio-e8atvrosvirkgucq7yfhqu.streamlit.app/"
  st.write(f"Voz a texto: [Enlace]({url})")
 
- st.subheader("Análisis de Datos")
+ st.subheader("OCR")
  image = Image.open('data_analisis.png')
  st.image(image, width=190)
- st.write("En la siguiente enlace veremos como se pueden analizar datos usando agentes.") 
- url = "https://dataagente.streamlit.app/"
+ st.write("En el siguiente enlace veremos una app que reconoce texto de imagenes y lo convierte a texto en tu pantalla.") 
+ url = "https://8a3mzxo4ahszf7kz2u9jwk.streamlit.app/"
  st.write(f"Datos: [Enlace]({url})")
 
  st.subheader("Trasnscriptor Audio y Video")
@@ -68,7 +68,7 @@ with col3:
  url = "https://traductor1-cud5mwbxqpnw9mfi4bmj2t.streamlit.app/"
  st.write(f"RAG: [Enlace]({url})")
 
- st.subheader("Análisis de Imagen")
+ st.subheader("OCR a morse")
  image = Image.open('OIG4.jpg')
  st.image(image, width=200)
  st.write("En la siguiente enlace veremos una aplicación que reconoce  el texto en imagenes y convertir ese texto en codigo morse.") 
