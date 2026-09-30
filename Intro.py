@@ -52,11 +52,11 @@ with col2:
  url = "https://8a3mzxo4ahszf7kz2u9jwk.streamlit.app/"
  st.write(f"Datos: [Enlace]({url})")
 
- st.subheader("Trasnscriptor Audio y Video")
+ st.subheader("WordCloud")
  image = Image.open('OIG3.jpg')
  st.image(image, width=200)
- st.write("En la siguiente enlace veremos como realizamos transcripciones de audio/video.") 
- url = "https://transcript-whisper.streamlit.app/"
+ st.write("En el siguiente enlace podremos realizar una nube de palabras.") 
+ url = "https://wordcloud-hbdsnmemycyswji6j2cavb.streamlit.app/"
  st.write(f"Transcriptor: [Enlace]({url})")
 
 
@@ -75,11 +75,11 @@ with col3:
  url = "https://ocr-audio-fw4c98qxulwsqkkzzdsnau.streamlit.app/"
  st.write(f"Vision: [Enlace]({url})")
  
- st.subheader("Sistema Ciberfísico")
+ st.subheader("Detector de sentimientos")
  image = Image.open('OIG6.jpg')
  st.image(image, width=200)
- st.write("En la siguiente enlace veremos la capacidad de interacción con el mundo físico.") 
- url = "https://vision2-gpt4o.streamlit.app/"
+ st.write("En la siguiente pagina podremos ingresar algun sentimiento y nos dira si es negativo, positivo o neutro, y nos mostrara una representacion.") 
+ url = "https://sentiment-6fgn5um9ucappfxvluu3c3f.streamlit.app/"
  st.write(f"Vision: [Enlace]({url})")
 
 
