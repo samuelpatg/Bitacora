@@ -1,85 +1,216 @@
+import os
 import streamlit as st
 from PIL import Image
-st.title("Bitacora de las actividades en clase.")
-
+ 
+st.set_page_config(
+    page_title="Bitácora de clase",
+    page_icon="📒",
+    layout="wide",
+)
+ 
+st.markdown(
+    """
+    <style>
+    .hero {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        padding: 2rem 2rem;
+        border-radius: 16px;
+        color: white;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .hero h1 { margin: 0; font-size: 2.4rem; }
+    .hero p  { margin: .4rem 0 0 0; opacity: .9; font-size: 1.05rem; }
+    .seccion {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 1.8rem 0 .8rem 0;
+        padding-bottom: .3rem;
+        border-bottom: 3px solid #2575fc;
+        display: inline-block;
+    }
+    .card-title { font-size: 1.1rem; font-weight: 700; margin: .4rem 0 .2rem 0; }
+    .card-desc  { font-size: .92rem; opacity: .85; min-height: 3.2rem; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+ 
+# ---------- Datos: edita aquí para agregar actividades ----------
+# Cada actividad: título, emoji, imagen, descripción y url
+ACTIVIDADES = [
+    {
+        "titulo": "Primer trabajo",
+        "emoji": "🔊",
+        "imagen": "txt_to_audio2.png",
+        "desc": "Aplicación que convierte texto en audio.",
+        "url": "https://miprimertrabajitojiijiji.streamlit.app/",
+        "boton": "Texto a voz",
+    },
+    {
+        "titulo": "Texto a código Morse (audio)",
+        "emoji": "📡",
+        "imagen": "OIG8.jpg",
+        "desc": "Aplicación que usa la conversión de voz a texto.",
+        "url": "https://textoaaudio-e8atvrosvirkgucq7yfhqu.streamlit.app/",
+        "boton": "Voz a texto",
+    },
+    {
+        "titulo": "Traductor",
+        "emoji": "🌍",
+        "imagen": "Chat_pdf.png",
+        "desc": "Traduce tu voz o un audio a otro idioma.",
+        "url": "https://traductor1-cud5mwbxqpnw9mfi4bmj2t.streamlit.app/",
+        "boton": "Traductor",
+    },
+    {
+        "titulo": "Reconocimiento de objetos",
+        "emoji": "🎯",
+        "imagen": "txt_to_audio.png",
+        "desc": "App que detecta objetos en imágenes.",
+        "url": "https://l37bxo8txruhjusy2ug4sz.streamlit.app/",
+        "boton": "YOLO",
+    },
+    {
+        "titulo": "OCR",
+        "emoji": "🔎",
+        "imagen": "data_analisis.png",
+        "desc": "Reconoce texto en imágenes y lo muestra en pantalla.",
+        "url": "https://8a3mzxo4ahszf7kz2u9jwk.streamlit.app/",
+        "boton": "OCR",
+    },
+    {
+        "titulo": "OCR a Morse",
+        "emoji": "📝",
+        "imagen": "OIG4.jpg",
+        "desc": "Reconoce texto en imágenes y lo convierte a código Morse.",
+        "url": "https://ocr-audio-fw4c98qxulwsqkkzzdsnau.streamlit.app/",
+        "boton": "OCR a Morse",
+    },
+    {
+        "titulo": "Entrenando modelos",
+        "emoji": "🧠",
+        "imagen": "OIG5.jpg",
+        "desc": "Aprende a usar tu modelo entrenado.",
+        "url": "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/",
+        "boton": "YOLO entrenado",
+    },
+    {
+        "titulo": "WordCloud",
+        "emoji": "☁️",
+        "imagen": "OIG3.jpg",
+        "desc": "Genera una nube de palabras.",
+        "url": "https://wordcloud-hbdsnmemycyswji6j2cavb.streamlit.app/",
+        "boton": "WordCloud",
+    },
+    {
+        "titulo": "Detector de sentimientos",
+        "emoji": "😊",
+        "imagen": "OIG6.jpg",
+        "desc": "Ingresa un texto y te dice si es positivo, negativo o neutro.",
+        "url": "https://sentiment-6fgn5um9ucappfxvluu3c3f.streamlit.app/",
+        "boton": "Sentimientos",
+    },
+]
+ 
+# Nueva fila: agrega aquí tus próximos enlaces (copia y pega el bloque de ejemplo)
+NUEVAS = [
+    {
+        "titulo": "Nueva actividad 1",
+        "emoji": "✨",
+        "imagen": "",  
+        "desc": "Descripción de la nueva actividad.",
+        "url": "",  
+        "boton": "Abrir",
+    },
+    {
+        "titulo": "Nueva actividad 2",
+        "emoji": "✨",
+        "imagen": "",
+        "desc": "Descripción de la nueva actividad.",
+        "url": "",
+        "boton": "Abrir",
+    },
+    {
+        "titulo": "Nueva actividad 3",
+        "emoji": "✨",
+        "imagen": "",
+        "desc": "Descripción de la nueva actividad.",
+        "url": "",
+        "boton": "Abrir",
+    },
+]
+ 
+ 
+def mostrar_tarjeta(act):
+    """Dibuja una tarjeta con imagen, descripción y botón."""
+    with st.container(border=True):
+        if act["imagen"] and os.path.exists(act["imagen"]):
+            st.image(Image.open(act["imagen"]), use_container_width=True)
+        else:
+            st.markdown(
+                f"<div style='text-align:center;font-size:4rem;padding:1.2rem 0'>{act['emoji']}</div>",
+                unsafe_allow_html=True,
+            )
+        st.markdown(
+            f"<div class='card-title'>{act['emoji']} {act['titulo']}</div>",
+            unsafe_allow_html=True,
+        )
+        st.markdown(f"<div class='card-desc'>{act['desc']}</div>", unsafe_allow_html=True)
+        if act["url"]:
+            st.link_button(f"Abrir: {act['boton']}", act["url"], use_container_width=True)
+        else:
+            st.button("Próximamente", disabled=True, use_container_width=True, key=f"d_{act['titulo']}")
+ 
+ 
+def mostrar_fila(lista, por_fila=3):
+    """Muestra las tarjetas en filas de 'por_fila' columnas."""
+    for i in range(0, len(lista), por_fila):
+        cols = st.columns(por_fila)
+        for col, act in zip(cols, lista[i : i + por_fila]):
+            with col:
+                mostrar_tarjeta(act)
+ 
+ 
 with st.sidebar:
-  st.subheader("Actividades elaboradas a lo largo del curso")
-  parrafo = (
-    "Diferentes actividades realizadas en clase"
-  )
-  st.write(parrafo)
-
-url_ia="https://sites.google.com/view/aplicacionesdeia/inicio"
-st.subheader("En el siguiente enlace puedes encontrar páginas y ejercicios prácticos")
-st.write(f"Enlace para páginas y ejercicios: [Enlace]({url_ia})")
-col1, col2, col3 = st.columns(3)
-
-with col1:
+    st.header("📒 Bitácora")
+    st.subheader("Actividades elaboradas a lo largo del curso")
+    st.write("Diferentes actividades realizadas en clase.")
+    st.divider()
+    st.metric("Actividades registradas", len(ACTIVIDADES) + sum(1 for n in NUEVAS if n["url"]))
+    st.divider()
+    st.link_button(
+        "🌐 Páginas y ejercicios prácticos",
+        "https://sites.google.com/view/aplicacionesdeia/inicio",
+        use_container_width=True,
+    )
  
- st.subheader("Primer trabajo")
- image = Image.open('txt_to_audio2.png')
- st.image(image, width=190)
- st.write("En el siguiente enlace usaremos una de las aplicaciones que convierte texto en audio") 
- url = "https://miprimertrabajitojiijiji.streamlit.app/"
- st.write(f"Texto a voz: [Enlace]({url})")
 
- st.subheader("Reconocimiento de Objetos")
- image = Image.open('txt_to_audio.png')
- st.image(image, width=200)
- st.write("En el siguiente enlace veremos una app que nos permite detectar objetos en Imágenes.") 
- url = "https://l37bxo8txruhjusy2ug4sz.streamlit.app/"
- st.write(f"YOLO: [Enlace]({url})")
-
- st.subheader("Entrenando Modelos")
- image = Image.open('OIG5.jpg')
- st.image(image, width=200)
- st.write("En la siguiente enlace veremos como puedes usar tu modelo entrenado.") 
- url = "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/"
- st.write(f"YOLO: [Enlace]({url})")
-
-with col2: 
- st.subheader("Conversión de Texto a Código Morse (Audio)")
- image = Image.open('OIG8.jpg')
- st.image(image, width=200)
- st.write("En el siguiente veremos una aplicación que usa la conversión de voz a texto.") 
- url = "https://textoaaudio-e8atvrosvirkgucq7yfhqu.streamlit.app/"
- st.write(f"Voz a texto: [Enlace]({url})")
-
- st.subheader("OCR")
- image = Image.open('data_analisis.png')
- st.image(image, width=190)
- st.write("En el siguiente enlace veremos una app que reconoce texto de imagenes y lo convierte a texto en tu pantalla.") 
- url = "https://8a3mzxo4ahszf7kz2u9jwk.streamlit.app/"
- st.write(f"Datos: [Enlace]({url})")
-
- st.subheader("WordCloud")
- image = Image.open('OIG3.jpg')
- st.image(image, width=200)
- st.write("En el siguiente enlace podremos realizar una nube de palabras.") 
- url = "https://wordcloud-hbdsnmemycyswji6j2cavb.streamlit.app/"
- st.write(f"Transcriptor: [Enlace]({url})")
-
-
-with col3: 
- st.subheader("Traductor")
- image = Image.open('Chat_pdf.png')
- st.image(image, width=190)
- st.write("En el siguiente link podras traudcir tu voz o un audio a otro idioma.") 
- url = "https://traductor1-cud5mwbxqpnw9mfi4bmj2t.streamlit.app/"
- st.write(f"RAG: [Enlace]({url})")
-
- st.subheader("OCR a morse")
- image = Image.open('OIG4.jpg')
- st.image(image, width=200)
- st.write("En la siguiente enlace veremos una aplicación que reconoce  el texto en imagenes y convertir ese texto en codigo morse.") 
- url = "https://ocr-audio-fw4c98qxulwsqkkzzdsnau.streamlit.app/"
- st.write(f"Vision: [Enlace]({url})")
+st.markdown(
+    """
+    <div class="hero">
+        <h1>📒 Bitácora de las actividades en clase</h1>
+        <p>Aplicaciones de Inteligencia Artificial · Proyectos y ejercicios prácticos</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
  
- st.subheader("Detector de sentimientos")
- image = Image.open('OIG6.jpg')
- st.image(image, width=200)
- st.write("En la siguiente pagina podremos ingresar algun sentimiento y nos dira si es negativo, positivo o neutro, y nos mostrara una representacion.") 
- url = "https://sentiment-6fgn5um9ucappfxvluu3c3f.streamlit.app/"
- st.write(f"Vision: [Enlace]({url})")
 
+st.info(
+    "En el siguiente enlace puedes encontrar páginas y ejercicios prácticos: "
+    "[Abrir sitio](https://sites.google.com/view/aplicacionesdeia/inicio)",
+    icon="🔗",
+)
+ 
 
+st.markdown("<div class='seccion'>🚀 Actividades del curso</div>", unsafe_allow_html=True)
+mostrar_fila(ACTIVIDADES)
+ 
+st.markdown("<div class='seccion'>🆕 Nuevas actividades</div>", unsafe_allow_html=True)
+mostrar_fila(NUEVAS)
+ 
+st.divider()
+st.caption("Hecho con Streamlit 💙")
+ 
