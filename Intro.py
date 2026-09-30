@@ -1,12 +1,14 @@
 import os
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageOps
  
 st.set_page_config(
     page_title="Bitácora de clase",
     page_icon="📒",
     layout="wide",
 )
+ 
+TAM_IMG = (600, 400)
  
 st.markdown(
     """
@@ -30,8 +32,17 @@ st.markdown(
         border-bottom: 3px solid #2575fc;
         display: inline-block;
     }
-    .card-title { font-size: 1.1rem; font-weight: 700; margin: .4rem 0 .2rem 0; }
-    .card-desc  { font-size: .92rem; opacity: .85; min-height: 3.2rem; }
+    .card-title { font-size: 1.1rem; font-weight: 700; margin: .4rem 0 .2rem 0; height: 2.9rem; overflow: hidden; }
+    .card-desc  { font-size: .92rem; opacity: .85; height: 6.5rem; overflow: hidden; }
+    .card-emoji {
+        aspect-ratio: 3 / 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        background: rgba(128,128,128,.12);
+        border-radius: 8px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -62,7 +73,6 @@ ACTIVIDADES = [
         "url": "https://traductor1-cud5mwbxqpnw9mfi4bmj2t.streamlit.app/",
         "boton": "Traductor",
     },
-   
     {
         "titulo": "OCR",
         "emoji": "🔎",
@@ -103,16 +113,13 @@ ACTIVIDADES = [
         "url": "https://sentiment-6fgn5um9ucappfxvluu3c3f.streamlit.app/",
         "boton": "Sentimientos",
     },
-]
- 
-ACTIVIDADES += [
     {
         "titulo": "TDF",
         "emoji": "❓",
         "imagen": "pregunta.jpg",
         "desc": "En este enlace podras subir un texto y aparaceren preguntas con base a el",
         "url": "https://52uipfxaqbfkuwqbixdcji.streamlit.app/",
-        "boton": "Abrir: TDF",
+        "boton": "TDF",
     },
     {
         "titulo": "Detector de Samuel",
@@ -120,20 +127,22 @@ ACTIVIDADES += [
         "imagen": "samu.jpg",
         "desc": "En esta pagina puedes tomar una foto y detectara si esta el estudiante que realizo estas actividades en ella.",
         "url": "https://detector-de-paz-cnymgqrevh7u6rwmkrzpih.streamlit.app/",
-        "boton": "Abrir: Detector",
+        "boton": "Detector",
     },
 ]
+ 
+ 
+def cargar_imagen(ruta):
+    img = Image.open(ruta).convert("RGB")
+    return ImageOps.fit(img, TAM_IMG, Image.LANCZOS)
  
  
 def mostrar_tarjeta(act):
     with st.container(border=True):
         if act["imagen"] and os.path.exists(act["imagen"]):
-            st.image(Image.open(act["imagen"]), use_container_width=True)
+            st.image(cargar_imagen(act["imagen"]), use_container_width=True)
         else:
-            st.markdown(
-                f"<div style='text-align:center;font-size:4rem;padding:1.2rem 0'>{act['emoji']}</div>",
-                unsafe_allow_html=True,
-            )
+            st.markdown(f"<div class='card-emoji'>{act['emoji']}</div>", unsafe_allow_html=True)
         st.markdown(
             f"<div class='card-title'>{act['emoji']} {act['titulo']}</div>",
             unsafe_allow_html=True,
@@ -184,4 +193,3 @@ st.info(
  
 st.markdown("<div class='seccion'>🚀 Actividades del curso</div>", unsafe_allow_html=True)
 mostrar_fila(ACTIVIDADES)
- 
