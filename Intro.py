@@ -41,7 +41,7 @@ with col2:
  st.subheader("Conversión de Texto a Código Morse (Audio)")
  image = Image.open('OIG8.jpg')
  st.image(image, width=200)
- st.write("En la siguiente veremos una aplicación que usa la conversión de voz a texto.") 
+ st.write("En el siguiente veremos una aplicación que usa la conversión de voz a texto.") 
  url = "https://textoaaudio-e8atvrosvirkgucq7yfhqu.streamlit.app/"
  st.write(f"Voz a texto: [Enlace]({url})")
 
@@ -61,11 +61,11 @@ with col2:
 
 
 with col3: 
- st.subheader("Generación en Contexto")
+ st.subheader("Traductor")
  image = Image.open('Chat_pdf.png')
  st.image(image, width=190)
- st.write("En la siguiente veremos una aplicación que usa RAG a partir de un documento (PDF).") 
- url = "https://chatpdf-cc.streamlit.app/"
+ st.write("En el siguiente link podras traudcir tu voz o un audio a otro idioma.") 
+ url = "https://traductor1-cud5mwbxqpnw9mfi4bmj2t.streamlit.app/"
  st.write(f"RAG: [Enlace]({url})")
 
  st.subheader("Análisis de Imagen")
