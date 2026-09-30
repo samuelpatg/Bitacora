@@ -107,12 +107,12 @@ ACTIVIDADES = [
  
 ACTIVIDADES += [
     {
-        "titulo": "Nueva actividad 1",
+        "titulo": "TDF",
         "emoji": "✨",
         "imagen": "",
-        "desc": "Descripción de la nueva actividad.",
-        "url": "",
-        "boton": "Abrir",
+        "desc": "En este enlace podras subir un texto y aparaceren preguntas con base a el",
+        "url": "https://52uipfxaqbfkuwqbixdcji.streamlit.app/",
+        "boton": "Abrir: TDF",
     },
     {
         "titulo": "Detector de Samuel",
