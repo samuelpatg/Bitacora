@@ -122,20 +122,12 @@ ACTIVIDADES += [
         "boton": "Abrir",
     },
     {
-        "titulo": "Nueva actividad 2",
+        "titulo": "Detector de Samuel",
         "emoji": "✨",
         "imagen": "",
-        "desc": "Descripción de la nueva actividad.",
-        "url": "",
-        "boton": "Abrir",
-    },
-    {
-        "titulo": "Nueva actividad 3",
-        "emoji": "✨",
-        "imagen": "",
-        "desc": "Descripción de la nueva actividad.",
-        "url": "",
-        "boton": "Abrir",
+        "desc": "En esta pagina puedes tomar una foto y detectara si esta el estudiante que realizo estas actividades en ella.",
+        "url": "https://detector-de-paz-cnymgqrevh7u6rwmkrzpih.streamlit.app/",
+        "boton": "Abrir: Detector",
     },
 ]
  
