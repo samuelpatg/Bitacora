@@ -38,11 +38,11 @@ with col1:
  st.write(f"YOLO: [Enlace]({url})")
 
 with col2: 
- st.subheader("Conversión de voz a texto")
+ st.subheader("Conversión de Texto a Código Morse (Audio)")
  image = Image.open('OIG8.jpg')
  st.image(image, width=200)
  st.write("En la siguiente veremos una aplicación que usa la conversión de voz a texto.") 
- url = "https://traductorw.streamlit.app/"
+ url = "https://textoaaudio-e8atvrosvirkgucq7yfhqu.streamlit.app/"
  st.write(f"Voz a texto: [Enlace]({url})")
 
  st.subheader("Análisis de Datos")
