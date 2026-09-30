@@ -41,7 +41,7 @@ ACTIVIDADES = [
     {
         "titulo": "Primer trabajo",
         "emoji": "🔊",
-        "imagen": "txt_to_audio2.png",
+        "imagen": "vapoi.jpg",
         "desc": "Aplicación que convierte texto en audio.",
         "url": "https://miprimertrabajitojiijiji.streamlit.app/",
         "boton": "Texto a voz",
@@ -49,7 +49,7 @@ ACTIVIDADES = [
     {
         "titulo": "Texto a código Morse (audio)",
         "emoji": "📡",
-        "imagen": "OIG8.jpg",
+        "imagen": "morse1.png",
         "desc": "Aplicación que usa la conversión de voz a texto.",
         "url": "https://textoaaudio-e8atvrosvirkgucq7yfhqu.streamlit.app/",
         "boton": "Voz a texto",
@@ -57,7 +57,7 @@ ACTIVIDADES = [
     {
         "titulo": "Traductor",
         "emoji": "🌍",
-        "imagen": "Chat_pdf.png",
+        "imagen": "trad.png",
         "desc": "Traduce tu voz o un audio a otro idioma.",
         "url": "https://traductor1-cud5mwbxqpnw9mfi4bmj2t.streamlit.app/",
         "boton": "Traductor",
@@ -66,7 +66,7 @@ ACTIVIDADES = [
     {
         "titulo": "OCR",
         "emoji": "🔎",
-        "imagen": "data_analisis.png",
+        "imagen": "ocr.png",
         "desc": "Reconoce texto en imágenes y lo muestra en pantalla.",
         "url": "https://8a3mzxo4ahszf7kz2u9jwk.streamlit.app/",
         "boton": "OCR",
@@ -74,7 +74,7 @@ ACTIVIDADES = [
     {
         "titulo": "OCR a Morse",
         "emoji": "📝",
-        "imagen": "OIG4.jpg",
+        "imagen": "ocraudio.png",
         "desc": "Reconoce texto en imágenes y lo convierte a código Morse.",
         "url": "https://ocr-audio-fw4c98qxulwsqkkzzdsnau.streamlit.app/",
         "boton": "OCR a Morse",
@@ -82,15 +82,15 @@ ACTIVIDADES = [
     {
         "titulo": "Entrenando modelos",
         "emoji": "🧠",
-        "imagen": "OIG5.jpg",
-        "desc": "Aprende a usar tu modelo entrenado.",
+        "imagen": "reco.jpg",
+        "desc": "Este modelo reconoce objetos en imagenes",
         "url": "https://l37bxo8txruhjusy2ug4sz.streamlit.app/",
         "boton": "YOLO entrenado",
     },
     {
         "titulo": "WordCloud",
         "emoji": "☁️",
-        "imagen": "OIG3.jpg",
+        "imagen": "nube.jpg",
         "desc": "Genera una nube de palabras.",
         "url": "https://wordcloud-hbdsnmemycyswji6j2cavb.streamlit.app/",
         "boton": "WordCloud",
@@ -98,7 +98,7 @@ ACTIVIDADES = [
     {
         "titulo": "Detector de sentimientos",
         "emoji": "😊",
-        "imagen": "OIG6.jpg",
+        "imagen": "senti.jpg",
         "desc": "Ingresa un texto y te dice si es positivo, negativo o neutro.",
         "url": "https://sentiment-6fgn5um9ucappfxvluu3c3f.streamlit.app/",
         "boton": "Sentimientos",
@@ -108,8 +108,8 @@ ACTIVIDADES = [
 ACTIVIDADES += [
     {
         "titulo": "TDF",
-        "emoji": "✨",
-        "imagen": "",
+        "emoji": "❓",
+        "imagen": "pregunta.jpg",
         "desc": "En este enlace podras subir un texto y aparaceren preguntas con base a el",
         "url": "https://52uipfxaqbfkuwqbixdcji.streamlit.app/",
         "boton": "Abrir: TDF",
@@ -117,7 +117,7 @@ ACTIVIDADES += [
     {
         "titulo": "Detector de Samuel",
         "emoji": "✨",
-        "imagen": "",
+        "imagen": "samu.jpg",
         "desc": "En esta pagina puedes tomar una foto y detectara si esta el estudiante que realizo estas actividades en ella.",
         "url": "https://detector-de-paz-cnymgqrevh7u6rwmkrzpih.streamlit.app/",
         "boton": "Abrir: Detector",
