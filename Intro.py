@@ -37,8 +37,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
  
-# ---------- Datos: edita aquí para agregar actividades ----------
-# Cada actividad: título, emoji, imagen, descripción y url
 ACTIVIDADES = [
     {
         "titulo": "Primer trabajo",
@@ -114,14 +112,13 @@ ACTIVIDADES = [
     },
 ]
  
-# Nueva fila: agrega aquí tus próximos enlaces (copia y pega el bloque de ejemplo)
-NUEVAS = [
+ACTIVIDADES += [
     {
         "titulo": "Nueva actividad 1",
         "emoji": "✨",
-        "imagen": "",  
+        "imagen": "",
         "desc": "Descripción de la nueva actividad.",
-        "url": "",  
+        "url": "",
         "boton": "Abrir",
     },
     {
@@ -144,7 +141,6 @@ NUEVAS = [
  
  
 def mostrar_tarjeta(act):
-    """Dibuja una tarjeta con imagen, descripción y botón."""
     with st.container(border=True):
         if act["imagen"] and os.path.exists(act["imagen"]):
             st.image(Image.open(act["imagen"]), use_container_width=True)
@@ -165,7 +161,6 @@ def mostrar_tarjeta(act):
  
  
 def mostrar_fila(lista, por_fila=3):
-    """Muestra las tarjetas en filas de 'por_fila' columnas."""
     for i in range(0, len(lista), por_fila):
         cols = st.columns(por_fila)
         for col, act in zip(cols, lista[i : i + por_fila]):
@@ -178,7 +173,7 @@ with st.sidebar:
     st.subheader("Actividades elaboradas a lo largo del curso")
     st.write("Diferentes actividades realizadas en clase.")
     st.divider()
-    st.metric("Actividades registradas", len(ACTIVIDADES) + sum(1 for n in NUEVAS if n["url"]))
+    st.metric("Actividades registradas", sum(1 for a in ACTIVIDADES if a["url"]))
     st.divider()
     st.link_button(
         "🌐 Páginas y ejercicios prácticos",
@@ -186,7 +181,6 @@ with st.sidebar:
         use_container_width=True,
     )
  
-
 st.markdown(
     """
     <div class="hero">
@@ -197,20 +191,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
  
-
 st.info(
     "En el siguiente enlace puedes encontrar páginas y ejercicios prácticos: "
     "[Abrir sitio](https://sites.google.com/view/aplicacionesdeia/inicio)",
     icon="🔗",
 )
  
-
 st.markdown("<div class='seccion'>🚀 Actividades del curso</div>", unsafe_allow_html=True)
 mostrar_fila(ACTIVIDADES)
- 
-st.markdown("<div class='seccion'>🆕 Nuevas actividades</div>", unsafe_allow_html=True)
-mostrar_fila(NUEVAS)
- 
-st.divider()
-st.caption("Hecho con Streamlit 💙")
  
