@@ -62,14 +62,7 @@ ACTIVIDADES = [
         "url": "https://traductor1-cud5mwbxqpnw9mfi4bmj2t.streamlit.app/",
         "boton": "Traductor",
     },
-    {
-        "titulo": "Reconocimiento de objetos",
-        "emoji": "🎯",
-        "imagen": "txt_to_audio.png",
-        "desc": "App que detecta objetos en imágenes.",
-        "url": "https://l37bxo8txruhjusy2ug4sz.streamlit.app/",
-        "boton": "YOLO",
-    },
+   
     {
         "titulo": "OCR",
         "emoji": "🔎",
@@ -91,7 +84,7 @@ ACTIVIDADES = [
         "emoji": "🧠",
         "imagen": "OIG5.jpg",
         "desc": "Aprende a usar tu modelo entrenado.",
-        "url": "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/",
+        "url": "https://l37bxo8txruhjusy2ug4sz.streamlit.app/",
         "boton": "YOLO entrenado",
     },
     {
