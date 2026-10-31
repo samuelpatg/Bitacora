@@ -129,6 +129,78 @@ ACTIVIDADES = [
         "url": "https://detector-de-paz-cnymgqrevh7u6rwmkrzpih.streamlit.app/",
         "boton": "Detector",
     },
+    {
+        "titulo": "Tablero Inteligente",
+        "emoji": "🧑‍🏫",
+        "imagen": None,
+        "desc": "Dibuja el boceto en el panel y presiona el botón para analizarlo.",
+        "url": "https://drawrecog-ctizhf5hergbd67xemxkvs.streamlit.app/",
+        "boton": "Tablero Inteligente",
+    },
+    {
+        "titulo": "Detección de Dígitos Escritos a Mano",
+        "emoji": "✍️",
+        "imagen": None,
+        "desc": "Dibuja un dígito y la página lo detectará y reconocerá.",
+        "url": "https://mnistpred-8w5uuho8jcqfnbhkdultgo.streamlit.app/",
+        "boton": "Dígitos",
+    },
+    {
+        "titulo": "Tablero para dibujo",
+        "emoji": "🎨",
+        "imagen": None,
+        "desc": "Dibuja libremente lo que quieras.",
+        "url": "https://tablero-bm2vwtpxghzkj9nciqt4jh.streamlit.app/",
+        "boton": "Tablero de dibujo",
+    },
+    {
+        "titulo": "Tablero del Terror",
+        "emoji": "🕯️",
+        "imagen": None,
+        "desc": "Dibuja algo en el tablero y presiona el botón para crear una historia de terror relacionada con el dibujo.",
+        "url": "https://bitacora-ykmsmns2h4xoopavt7mni2.streamlit.app/",
+        "boton": "Tablero del Terror",
+    },
+    {
+        "titulo": "MQTT Control",
+        "emoji": "🎛️",
+        "imagen": None,
+        "desc": "Envía órdenes y valores analógicos a tu dispositivo por MQTT.",
+        "url": "https://iswuxstfarrgyemaeda7bm.streamlit.app/",
+        "boton": "MQTT Control",
+    },
+    {
+        "titulo": "Lector de Sensor MQTT",
+        "emoji": "📡",
+        "imagen": None,
+        "desc": "Consulta el último mensaje publicado por tu sensor en tiempo real.",
+        "url": "https://receptor-bexlqe23gjmfpulm3pdqct.streamlit.app/",
+        "boton": "Lector MQTT",
+    },
+    {
+        "titulo": "Control por voz",
+        "emoji": "🎙️",
+        "imagen": None,
+        "desc": "Controla tu dispositivo por voz.",
+        "url": "https://ctrlvoice-gvks7v9n4cyergxxxfhybp.streamlit.app/",
+        "boton": "Control por voz",
+    },
+    {
+        "titulo": "Análisis de plantas",
+        "emoji": "🌿",
+        "imagen": None,
+        "desc": "Toma la foto de una planta, reconocerá el tipo y te dirá sus cuidados.",
+        "url": "https://visionapp-hwnwwkumtaxpztwxcusezw.streamlit.app/",
+        "boton": "Análisis de plantas",
+    },
+    {
+        "titulo": "Generación Aumentada por Recuperación (RAG)",
+        "emoji": "📚",
+        "imagen": None,
+        "desc": "Este agente te ayudará a realizar análisis sobre el PDF cargado.",
+        "url": "https://chatpdf-r6sxcbg5bfciwgrtyehqcz.streamlit.app/",
+        "boton": "RAG",
+    },
 ]
  
  
@@ -193,3 +265,4 @@ st.info(
  
 st.markdown("<div class='seccion'>🚀 Actividades del curso</div>", unsafe_allow_html=True)
 mostrar_fila(ACTIVIDADES)
+ 
