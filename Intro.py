@@ -172,7 +172,7 @@ ACTIVIDADES = [
     {
         "titulo": "Lector de Sensor MQTT",
         "emoji": "📡",
-        "imagen": "receptor.jpg",
+        "imagen": "recep.jpg",
         "desc": "Consulta el último mensaje publicado por tu sensor en tiempo real.",
         "url": "https://receptor-bexlqe23gjmfpulm3pdqct.streamlit.app/",
         "boton": "Lector MQTT",
